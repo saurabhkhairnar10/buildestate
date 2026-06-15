@@ -63,7 +63,7 @@ export default function Contact() {
             </div>
             <div className="text-center">
               <p className="font-bold text-gray-800 text-lg">Email Us</p>
-              <p className="text-blue-600 font-semibold mt-1">saurabh.khairnar@cloverinfotech.com</p>
+              <p className="text-blue-600 font-semibold mt-1">saurabhkhairnar0@gmail.com</p>
               <p className="text-gray-500 text-sm mt-1">We reply within 24 hours</p>
             </div>
             <span className="bg-blue-600 text-white text-sm px-6 py-2 rounded-full font-semibold group-hover:bg-blue-700 transition-colors">
