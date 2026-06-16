@@ -1,12 +1,38 @@
 import { notFound } from "next/navigation";
 import { CheckCircle, MapPin, Calendar, Shield } from "lucide-react";
 import Link from "next/link";
+import { FloorPlan,CompletedProject } from "@/types/project";
+
+// interface FloorPlan {
+//   type: string;
+//   image: string;
+//   area: string;
+// }
+
+// interface CompletedProject {
+//   id: number;
+//   name: string;
+//   image: string;
+//   location: string;
+//   type: string;
+//   description: string;
+//   completionDate: string;
+//   year: string;
+//   units: string;
+//   rera: string;
+//   amenities: string[];
+//   technologies: string[];
+//   gallery: string[];
+//   floorPlans: FloorPlan[];
+// }
 
 export default async function CompletedProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/projects/completed`);
-  const projects = await res.json();
-  const project = projects.find((p: any) => p.id === Number(id));
+  // const projects = await res.json();
+  const projects: CompletedProject[] = await res.json();
+  console.log("first,",projects);
+  const project = projects.find((p) => p.id === Number(id));
   if (!project) return notFound();
 
   return (
@@ -51,7 +77,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.floorPlans.map((fp) => (
+            {project.floorPlans.map((fp:FloorPlan) => (
               <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
                 <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
                 <div className="p-4 flex justify-between items-center">
@@ -67,7 +93,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Amenities</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {project.amenities.map((a) => (
+            {project.amenities.map((a:string) => (
               <div key={a} className="flex items-center gap-2 bg-green-50 rounded-xl px-4 py-3">
                 <CheckCircle size={16} className="text-green-600 shrink-0" />
                 <span className="text-sm text-gray-700">{a}</span>
@@ -80,7 +106,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Technologies Used</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {project.technologies.map((t) => (
+            {project.technologies.map((t:string) => (
               <div key={t} className="flex items-center gap-2 bg-blue-50 rounded-xl px-4 py-3">
                 <Shield size={16} className="text-blue-600 shrink-0" />
                 <span className="text-sm text-gray-700">{t}</span>
@@ -93,7 +119,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Project Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {project.gallery.map((img, i) => (
+            {project.gallery.map((img:string, i:number) => (
               <img key={i} src={img} alt={`Gallery ${i + 1}`} className="w-full h-40 object-cover rounded-2xl hover:scale-105 transition-transform duration-300" />
             ))}
           </div>
