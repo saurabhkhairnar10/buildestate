@@ -18,6 +18,13 @@ export interface BaseProject {
   floorPlans: FloorPlan[];
 }
 
+export interface ProjectsApiResponse<T> {
+  success: boolean;
+  data?: T[];
+  message?: string;
+}
+
+
 export interface CompletedProject extends BaseProject {
   completionDate: string;
   year: string;
@@ -34,3 +41,7 @@ export interface OngoingProject extends BaseProject {
 export interface UpcomingProject extends BaseProject {
   launch: string;
 }
+
+export type CompletedProjectsApiResponse = ProjectsApiResponse<CompletedProject>;
+export type OngoingProjectsApiResponse = ProjectsApiResponse<OngoingProject>;
+export type UpcomingProjectsApiResponse = ProjectsApiResponse<UpcomingProject>;

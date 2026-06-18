@@ -3,33 +3,9 @@ import { CheckCircle, MapPin, Calendar, Shield } from "lucide-react";
 import Link from "next/link";
 import { FloorPlan,CompletedProject } from "@/types/project";
 
-// interface FloorPlan {
-//   type: string;
-//   image: string;
-//   area: string;
-// }
-
-// interface CompletedProject {
-//   id: number;
-//   name: string;
-//   image: string;
-//   location: string;
-//   type: string;
-//   description: string;
-//   completionDate: string;
-//   year: string;
-//   units: string;
-//   rera: string;
-//   amenities: string[];
-//   technologies: string[];
-//   gallery: string[];
-//   floorPlans: FloorPlan[];
-// }
-
 export default async function CompletedProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/projects/completed`);
-  // const projects = await res.json();
+  const res = await fetch(`${process.env.BASE_URL}/api/projects/completed`);
   const projects: CompletedProject[] = await res.json();
   console.log("first,",projects);
   const project = projects.find((p) => p.id === Number(id));

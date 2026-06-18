@@ -4,29 +4,8 @@ import Link from "next/link";
 import { FloorPlan,UpcomingProject } from "@/types/project";
 
 export default async function UpcomingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
-//   interface FloorPlan {
-//   type: string;
-//   image: string;
-//   area: string;
-// }
-
-// interface UpcomingProject {
-//   id: number;
-//   name: string;
-//   image: string;
-//   type: string;
-//   location: string;
-//   launch: string;
-//   rera: string;
-//   description: string;
-//   amenities: string[];
-//   technologies: string[];
-//   gallery: string[];
-//   floorPlans: FloorPlan[];
-// }
-  
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/projects/upcoming`);
+  const res = await fetch(`${process.env.BASE_URL}/api/projects/upcoming`);
   const projects = await res.json();
   const project = projects.find((p: any) => p.id === Number(id));
   if (!project) return notFound();

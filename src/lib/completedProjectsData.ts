@@ -1,4 +1,6 @@
-export const completedProjects = [
+import { CompletedProject } from "@/types/project";
+
+export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
   {
     id: 1,
     name: "Sunrise Apartments",
