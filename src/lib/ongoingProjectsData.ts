@@ -1,4 +1,6 @@
-export const ongoingProjects = [
+import { OngoingProject } from "@/types/project";
+
+export const  ongoingProjects: OngoingProject[] = [
   {
     id: 1,
     name: "Emerald Heights",

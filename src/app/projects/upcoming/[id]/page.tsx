@@ -6,7 +6,7 @@ import { FloorPlan,UpcomingProject } from "@/types/project";
 export default async function UpcomingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const res = await fetch(`${process.env.BASE_URL}/api/projects/upcoming`);
-  const projects = await res.json();
+  const projects:UpcomingProject[] = await res.json();
   const project = projects.find((p: any) => p.id === Number(id));
   if (!project) return notFound();
 

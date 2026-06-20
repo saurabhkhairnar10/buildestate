@@ -1,7 +1,6 @@
-
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
-import { DEFAULT_COMPLETED_PROJECTS } from "@/lib/completedProjectsData"
+import { DEFAULT_COMPLETED_PROJECTS } from "@/lib/completedProjectsData";
 import CompletedProject from "@/models/CompletedProject";
 
 export async function GET() {
@@ -9,10 +8,9 @@ export async function GET() {
     await connectDB();
 
     const count = await CompletedProject.countDocuments();
-
     // First-time setup: seed the database with the shared defaults.
     if (count === 0) {
-      await CompletedProject.insertMany(DEFAULT_COMPLETED_PROJECTS);
+      await CompletedProject.insertMany(DEFAULT_COMPLETED_PROJECTS as any[]);
     }
 
     const projects = await CompletedProject.find().sort({ id: 1 });

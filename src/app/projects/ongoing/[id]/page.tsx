@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { OngoingProject } from "@/types/project";
+import { FloorPlan,OngoingProject } from "@/types/project";
 
 export default async function OngoingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -67,7 +67,7 @@ export default async function OngoingProjectDetail({ params }: { params: Promise
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.floorPlans.map((fp) => (
+            {project.floorPlans.map((fp:FloorPlan) => (
               <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
                 <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
                 <div className="p-4 flex justify-between items-center">

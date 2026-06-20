@@ -1,37 +1,14 @@
-import mongoose from "mongoose";
+import { createProjectModel } from "./BaseProjectSchema";
 
-const floorPlanSchema = new mongoose.Schema(
+// Extra fields beyond BaseProject, matching the CompletedProject interface.
+const CompletedProject = createProjectModel(
+  "CompletedProject",
   {
-    type: { type: String, required: true },
-    area: { type: String, required: true },
-    image: { type: String, required: true },
-  },
-  { _id: false }
-);
-
-const completedProjectSchema = new mongoose.Schema(
-  {
-    id: { type: Number, required: true, unique: true },
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-    location: { type: String, required: true },
-    units: { type: String, required: true },
-    year: { type: String, required: true },
     completionDate: { type: String, required: true },
-    rera: { type: String, required: true },
-    image: { type: String, required: true },
-    description: { type: String, required: true },
-    amenities: { type: [String], default: [] },
-    technologies: { type: [String], default: [] },
-    floorPlans: { type: [floorPlanSchema], default: [] },
-    gallery: { type: [String], default: [] },
+    year: { type: String, required: true },
+    units: { type: String, required: true },
   },
-  { timestamps: true }
+  "completedprojects" // explicit collection name in the buildestate database
 );
-
-// Third argument explicitly sets the collection name to "completedprojects".
-const CompletedProject =
-  mongoose.models.CompletedProject ||
-  mongoose.model("CompletedProject", completedProjectSchema, "completedprojects");
 
 export default CompletedProject;

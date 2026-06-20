@@ -40,6 +40,7 @@ export interface OngoingProject extends BaseProject {
 
 export interface UpcomingProject extends BaseProject {
   launch: string;
+  teaser: string;
 }
 
 export type CompletedProjectsApiResponse = ProjectsApiResponse<CompletedProject>;

@@ -1,4 +1,6 @@
-export const upcomingProjects = [
+import { UpcomingProject } from "@/types/project";
+
+export const upcomingProjects : UpcomingProject[] = [
   {
     id: 1,
     name: "Golden Gate Residency",
