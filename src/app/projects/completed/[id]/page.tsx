@@ -1,14 +1,23 @@
 import { notFound } from "next/navigation";
 import { CheckCircle, MapPin, Calendar, Shield } from "lucide-react";
 import Link from "next/link";
-import { FloorPlan,CompletedProject } from "@/types/project";
+import { FloorPlan, CompletedProject, CompletedProjectsApiResponse } from "@/types/project";
 
 export default async function CompletedProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+
   const res = await fetch(`${process.env.BASE_URL}/api/projects/completed`);
-  const projects: CompletedProject[] = await res.json();
-  console.log("first,",projects);
-  const project = projects.find((p) => p.id === Number(id));
+
+  if (!res.ok) return notFound();
+
+  // API returns { success: boolean, data: CompletedProject[] }
+  // — unwrap .data before calling .find(), otherwise projects is an object not an array.
+  const json: CompletedProjectsApiResponse = await res.json();
+
+  if (!json.success || !json.data) return notFound();
+
+  const project = json.data.find((p) => p.id === Number(id));
+
   if (!project) return notFound();
 
   return (
@@ -53,7 +62,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.floorPlans.map((fp:FloorPlan) => (
+            {project.floorPlans.map((fp: FloorPlan) => (
               <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
                 <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
                 <div className="p-4 flex justify-between items-center">
@@ -69,7 +78,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Amenities</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {project.amenities.map((a:string) => (
+            {project.amenities.map((a: string) => (
               <div key={a} className="flex items-center gap-2 bg-green-50 rounded-xl px-4 py-3">
                 <CheckCircle size={16} className="text-green-600 shrink-0" />
                 <span className="text-sm text-gray-700">{a}</span>
@@ -82,7 +91,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Technologies Used</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {project.technologies.map((t:string) => (
+            {project.technologies.map((t: string) => (
               <div key={t} className="flex items-center gap-2 bg-blue-50 rounded-xl px-4 py-3">
                 <Shield size={16} className="text-blue-600 shrink-0" />
                 <span className="text-sm text-gray-700">{t}</span>
@@ -95,7 +104,7 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Project Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {project.gallery.map((img:string, i:number) => (
+            {project.gallery.map((img: string, i: number) => (
               <img key={i} src={img} alt={`Gallery ${i + 1}`} className="w-full h-40 object-cover rounded-2xl hover:scale-105 transition-transform duration-300" />
             ))}
           </div>
@@ -106,12 +115,12 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Interested in Similar Projects?</h3>
           <p className="text-gray-500 mb-6">Contact us to know about our ongoing and upcoming projects</p>
           <div className="flex gap-4 justify-center">
-            <Link href="/#contact" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            <a href="/#contact" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
               Contact Us
-            </Link>
-            <Link href="/#ongoing" className="border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            </a>
+            <a href="/#ongoing" className="border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
               View Ongoing Projects
-            </Link>
+            </a>
           </div>
         </div>
       </div>

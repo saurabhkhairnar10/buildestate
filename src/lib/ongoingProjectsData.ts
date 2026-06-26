@@ -16,8 +16,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["Swimming Pool", "Gymnasium", "Clubhouse", "24/7 Security", "Power Backup", "Covered Parking", "Children Play Area", "Landscaped Garden"],
     technologies: ["Earthquake Resistant RCC Structure", "Rainwater Harvesting", "Solar Panels", "Smart Home Automation", "CCTV Surveillance", "Fire Safety Systems"],
     floorPlans: [
-      { type: "2 BHK", area: "1050 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1450 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "1050 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "3 BHK", area: "1450 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
@@ -41,8 +41,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["High Speed Elevators", "Food Court", "Conference Rooms", "24/7 Security", "Power Backup", "Ample Parking", "ATM", "Cafeteria"],
     technologies: ["Green Building Certified", "Energy Efficient HVAC", "Smart Access Control", "Fiber Optic Connectivity", "Fire Suppression System", "EV Charging Points"],
     floorPlans: [
-      { type: "Small Office", area: "500 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Large Office", area: "1200 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "Small Office", area: "500 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "Large Office", area: "1200 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600",
@@ -66,8 +66,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["Organic Garden", "Swimming Pool", "Clubhouse", "24/7 Security", "Power Backup", "Covered Parking", "Jogging Track", "Meditation Zone"],
     technologies: ["Green Building Design", "Solar Water Heater", "Rainwater Harvesting", "Waste Management System", "CCTV Surveillance", "Fire Safety Systems"],
     floorPlans: [
-      { type: "2 BHK", area: "950 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1350 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "950 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "3 BHK", area: "1350 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600",
@@ -91,8 +91,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["Rooftop Pool", "Gymnasium", "Spa", "24/7 Security", "Power Backup", "2 Car Parking", "Concierge Service", "Sky Lounge"],
     technologies: ["Earthquake Resistant RCC", "Solar Panels", "Smart Home Ready", "CCTV Surveillance", "EV Charging Points", "Sewage Treatment Plant"],
     floorPlans: [
-      { type: "3 BHK", area: "1600 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "4 BHK", area: "2200 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "3 BHK", area: "1600 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "4 BHK", area: "2200 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600",
@@ -116,8 +116,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["Conference Center", "Food Court", "24/7 Security", "Power Backup", "Multi-level Parking", "ATM", "Gym", "Rooftop Lounge"],
     technologies: ["LEED Certified", "Smart Building Management", "High Speed Elevators", "Fiber Optic Network", "Fire Suppression System", "EV Charging"],
     floorPlans: [
-      { type: "Studio Office", area: "400 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Full Floor", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600", area: "4000 sq.ft" },
+      { type: "Studio Office", area: "400 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "Full Floor", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", area: "4000 sq.ft" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
@@ -141,8 +141,8 @@ export const  ongoingProjects: OngoingProject[] = [
     amenities: ["Swimming Pool", "Clubhouse", "24/7 Security", "Power Backup", "Covered Parking", "Children Play Area", "Cycling Track", "Open Amphitheatre"],
     technologies: ["Earthquake Resistant Structure", "Solar Water Heater", "Rainwater Harvesting", "Smart Locks", "CCTV Surveillance", "Fire Safety Systems"],
     floorPlans: [
-      { type: "2 BHK", area: "900 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1300 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "900 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
+      { type: "3 BHK", area: "1300 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600",

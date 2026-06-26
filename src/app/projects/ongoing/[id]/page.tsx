@@ -1,14 +1,24 @@
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { FloorPlan,OngoingProject } from "@/types/project";
+import { FloorPlan,OngoingProject, OngoingProjectsApiResponse } from "@/types/project";
 
 export default async function OngoingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const res = await fetch(`${process.env.BASE_URL}/api/projects/ongoing`);
-  const projects: OngoingProject[] = await res.json();
-  const project = projects.find((p) => p.id === Number(id));
+
+  if (!res.ok) return notFound();
+
+  // API returns { success: boolean, data: OngoingProject[] }
+    // — unwrap .data before calling .find(), otherwise projects is an object not an array.
+    const json: OngoingProjectsApiResponse = await res.json();
+
+    if (!json.success || !json.data) return notFound();
+
+  const project = json.data.find((p) => p.id === Number(id));
+
   if (!project) return notFound();
+  
   return (
     <main className="min-h-screen bg-white pt-20">
       {/* Hero */}

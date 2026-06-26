@@ -1,14 +1,22 @@
 import { notFound } from "next/navigation";
 import { MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { FloorPlan,UpcomingProject } from "@/types/project";
+import { FloorPlan,UpcomingProject, UpcomingProjectsApiResponse } from "@/types/project";
 
 export default async function UpcomingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const res = await fetch(`${process.env.BASE_URL}/api/projects/upcoming`);
-  const projects:UpcomingProject[] = await res.json();
-  const project = projects.find((p: any) => p.id === Number(id));
-  if (!project) return notFound();
+ if (!res.ok) return notFound();
+ 
+   // API returns { success: boolean, data: UpcomingProject[] }
+     // — unwrap .data before calling .find(), otherwise projects is an object not an array.
+     const json: UpcomingProjectsApiResponse = await res.json();
+ 
+     if (!json.success || !json.data) return notFound();
+ 
+   const project = json.data.find((p) => p.id === Number(id));
+ 
+   if (!project) return notFound();
 
   return (
     <main className="min-h-screen bg-white pt-20">
