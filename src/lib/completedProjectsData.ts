@@ -15,8 +15,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Swimming Pool", "Gymnasium", "Clubhouse", "24/7 Security", "Power Backup", "Covered Parking", "Children Play Area", "Landscaped Garden"],
     technologies: ["Earthquake Resistant RCC Structure", "Rainwater Harvesting", "Solar Panels", "Smart Home Automation", "CCTV Surveillance", "Fire Safety Systems"],
     floorPlans: [
-      { type: "2 BHK", area: "950 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1350 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "950 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "3 BHK", area: "1350 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600",
@@ -39,8 +39,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["High Speed Elevators", "Food Court", "Conference Rooms", "24/7 Security", "Power Backup", "Ample Parking", "ATM", "Cafeteria"],
     technologies: ["Green Building Certified", "Energy Efficient HVAC", "Smart Access Control", "Fiber Optic Connectivity", "Fire Suppression System", "EV Charging Points"],
     floorPlans: [
-      { type: "Small Office", area: "500 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Large Office", area: "1200 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "Small Office", area: "500 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "Large Office", area: "1200 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
@@ -63,8 +63,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Private Garden", "Swimming Pool", "Clubhouse", "24/7 Security", "Power Backup", "2 Car Parking", "Jogging Track", "Meditation Zone"],
     technologies: ["Earthquake Resistant Structure", "Solar Water Heater", "Rainwater Harvesting", "Smart Locks", "CCTV Surveillance", "Sewage Treatment Plant"],
     floorPlans: [
-      { type: "3 BHK Villa", area: "2200 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "4 BHK Villa", area: "3000 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "3 BHK Villa", area: "2200 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "4 BHK Villa", area: "3000 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
@@ -87,8 +87,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Food Court", "Multiplex", "Kids Zone", "24/7 Security", "Power Backup", "Ample Parking", "ATM", "Escalators & Elevators"],
     technologies: ["Green Building Design", "Energy Efficient Lighting", "Smart Parking System", "CCTV Surveillance", "Fire Safety Systems", "Central Air Conditioning"],
     floorPlans: [
-      { type: "Small Shop", area: "300 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Large Shop", area: "800 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "Small Shop", area: "300 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "Large Shop", area: "800 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600",
@@ -111,8 +111,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Lake View Balcony", "Swimming Pool", "Gymnasium", "24/7 Security", "Power Backup", "Covered Parking", "Rooftop Lounge", "Yoga Deck"],
     technologies: ["Earthquake Resistant RCC", "Solar Panels", "Rainwater Harvesting", "Smart Home Ready", "CCTV Surveillance", "EV Charging Points"],
     floorPlans: [
-      { type: "2 BHK", area: "1050 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1500 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "1050 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "3 BHK", area: "1500 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600",
@@ -135,8 +135,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Sky Lounge", "Conference Center", "Food Court", "24/7 Security", "Power Backup", "Multi-level Parking", "Concierge Service", "Gym"],
     technologies: ["LEED Gold Certified", "Smart Building Management", "High Speed Elevators", "Fiber Optic Network", "Fire Suppression System", "EV Charging"],
     floorPlans: [
-      { type: "Studio Office", area: "400 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Full Floor", area: "5000 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "Studio Office", area: "400 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "Full Floor", area: "5000 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600",
@@ -159,8 +159,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Organic Garden", "Swimming Pool", "Clubhouse", "24/7 Security", "Power Backup", "Covered Parking", "Cycling Track", "Open Amphitheatre"],
     technologies: ["Green Building Design", "Solar Water Heater", "Rainwater Harvesting", "Waste Management System", "CCTV Surveillance", "Fire Safety Systems"],
     floorPlans: [
-      { type: "2 BHK", area: "900 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "3 BHK", area: "1300 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "2 BHK", area: "900 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "3 BHK", area: "1300 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600",
@@ -183,8 +183,8 @@ export const DEFAULT_COMPLETED_PROJECTS: CompletedProject[] = [
     amenities: ["Food Court", "24/7 Security", "Power Backup", "Ample Parking", "ATM", "Escalators", "Loading Dock", "Signage Rights"],
     technologies: ["Energy Efficient Design", "Smart Parking", "CCTV Surveillance", "Fire Safety Systems", "Central AC", "High Speed Internet"],
     floorPlans: [
-      { type: "Retail Shop", area: "250 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
-      { type: "Office Space", area: "600 sq.ft", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" },
+      { type: "Retail Shop", area: "250 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
+      { type: "Office Space", area: "600 sq.ft", image: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782458734/visoka_810_floor_plan_xg8oos.png", image3D: "https://res.cloudinary.com/dha7fuc1a/image/upload/v1782628876/rendair-floor-plan-to-render-26-06-2026-1d468aff_cqdxei.jpg" },
     ],
     gallery: [
       "https://images.unsplash.com/photo-1462396240927-52058a6a84ec?w=600",

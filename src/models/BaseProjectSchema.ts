@@ -7,6 +7,7 @@ export const floorPlanSchema = new mongoose.Schema(
     type: { type: String, required: true },
     area: { type: String, required: true },
     image: { type: String, required: true },
+    image3D: { type: String },
   },
   { _id: false }
 );

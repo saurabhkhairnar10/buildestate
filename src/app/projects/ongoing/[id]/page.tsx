@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, Shield, CheckCircle } from "lucide-react";
-import Link from "next/link";
-import { FloorPlan,OngoingProject, OngoingProjectsApiResponse } from "@/types/project";
+import { FloorPlan, OngoingProject, OngoingProjectsApiResponse } from "@/types/project";
+import FloorPlanCard from "@/components/ui/FloorPlanCard";
 
 export default async function OngoingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -9,16 +9,14 @@ export default async function OngoingProjectDetail({ params }: { params: Promise
 
   if (!res.ok) return notFound();
 
-  // API returns { success: boolean, data: OngoingProject[] }
-    // — unwrap .data before calling .find(), otherwise projects is an object not an array.
-    const json: OngoingProjectsApiResponse = await res.json();
+  const json: OngoingProjectsApiResponse = await res.json();
 
-    if (!json.success || !json.data) return notFound();
+  if (!json.success || !json.data) return notFound();
 
   const project = json.data.find((p) => p.id === Number(id));
 
   if (!project) return notFound();
-  
+
   return (
     <main className="min-h-screen bg-white pt-20">
       {/* Hero */}
@@ -73,18 +71,21 @@ export default async function OngoingProjectDetail({ params }: { params: Promise
           <p className="text-gray-600 leading-relaxed">{project.description}</p>
         </div>
 
-        {/* Floor Plans */}
+        {/* Floor Plans — FloorPlanCard handles 2D/3D toggle */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Floor Plans & Layouts</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            Click <span className="text-purple-600 font-semibold">3D Render</span> to switch between 2D plan and 3D view
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.floorPlans.map((fp:FloorPlan) => (
-              <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
-                <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
-                <div className="p-4 flex justify-between items-center">
-                  <p className="font-bold text-gray-800">{fp.type}</p>
-                  <span className="bg-amber-100 text-amber-700 text-sm px-3 py-1 rounded-full font-semibold">{fp.area}</span>
-                </div>
-              </div>
+            {project.floorPlans.map((fp: FloorPlan) => (
+              <FloorPlanCard
+                key={fp.type}
+                type={fp.type}
+                area={fp.area}
+                image={fp.image}
+                image3D={fp.image3D}
+              />
             ))}
           </div>
         </div>
@@ -130,12 +131,12 @@ export default async function OngoingProjectDetail({ params }: { params: Promise
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Book Your Unit Today</h3>
           <p className="text-gray-500 mb-6">Only {project.total - project.sold} units remaining — contact us now</p>
           <div className="flex gap-4 justify-center">
-            <Link href="/#contact" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            <a href="/#contact" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
               Contact Us
-            </Link>
-            <Link href="/#upcoming" className="border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            </a>
+            <a href="/#upcoming" className="border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
               View Upcoming Projects
-            </Link>
+            </a>
           </div>
         </div>
       </div>

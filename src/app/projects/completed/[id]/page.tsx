@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CheckCircle, MapPin, Calendar, Shield } from "lucide-react";
 import Link from "next/link";
 import { FloorPlan, CompletedProject, CompletedProjectsApiResponse } from "@/types/project";
+import FloorPlanCard from "@/components/ui/FloorPlanCard";
 
 export default async function CompletedProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -58,18 +59,21 @@ export default async function CompletedProjectDetail({ params }: { params: Promi
           <p className="text-gray-600 leading-relaxed">{project.description}</p>
         </div>
 
-        {/* Floor Plans */}
+        {/* Floor Plans  — FloorPlanCard handles 2D/3D toggle */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            Click <span className="text-purple-600 font-semibold">3D Render</span> to switch between 2D plan and 3D view
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {project.floorPlans.map((fp: FloorPlan) => (
-              <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
-                <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
-                <div className="p-4 flex justify-between items-center">
-                  <p className="font-bold text-gray-800">{fp.type}</p>
-                  <span className="bg-amber-100 text-amber-700 text-sm px-3 py-1 rounded-full font-semibold">{fp.area}</span>
-                </div>
-              </div>
+              <FloorPlanCard
+                key={fp.type}
+                type={fp.type}
+                area={fp.area}
+                image={fp.image}
+                image3D={fp.image3D}
+              />
             ))}
           </div>
         </div>

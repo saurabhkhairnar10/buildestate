@@ -1,22 +1,23 @@
 import { notFound } from "next/navigation";
 import { MapPin, Clock, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { FloorPlan,UpcomingProject, UpcomingProjectsApiResponse } from "@/types/project";
+import { FloorPlan, UpcomingProject, UpcomingProjectsApiResponse } from "@/types/project";
+import FloorPlanCard from "@/components/ui/FloorPlanCard";
 
 export default async function UpcomingProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const res = await fetch(`${process.env.BASE_URL}/api/projects/upcoming`);
- if (!res.ok) return notFound();
- 
-   // API returns { success: boolean, data: UpcomingProject[] }
-     // — unwrap .data before calling .find(), otherwise projects is an object not an array.
-     const json: UpcomingProjectsApiResponse = await res.json();
- 
-     if (!json.success || !json.data) return notFound();
- 
-   const project = json.data.find((p) => p.id === Number(id));
- 
-   if (!project) return notFound();
+  if (!res.ok) return notFound();
+
+  // API returns { success: boolean, data: UpcomingProject[] }
+  // — unwrap .data before calling .find(), otherwise projects is an object not an array.
+  const json: UpcomingProjectsApiResponse = await res.json();
+
+  if (!json.success || !json.data) return notFound();
+
+  const project = json.data.find((p) => p.id === Number(id));
+
+  if (!project) return notFound();
 
   return (
     <main className="min-h-screen bg-white pt-20">
@@ -55,18 +56,21 @@ export default async function UpcomingProjectDetail({ params }: { params: Promis
           <p className="text-gray-600 leading-relaxed">{project.description}</p>
         </div>
 
-        {/* Floor Plans */}
+        {/* Floor Plans — FloorPlanCard handles 2D/3D toggle */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Floor Plans & Layouts</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            Click <span className="text-purple-600 font-semibold">3D Render</span> to switch between 2D plan and 3D view
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.floorPlans.map((fp:FloorPlan) => (
-              <div key={fp.type} className="border rounded-2xl overflow-hidden shadow-sm">
-                <img src={fp.image} alt={fp.type} className="w-full h-48 object-cover" />
-                <div className="p-4 flex justify-between items-center">
-                  <p className="font-bold text-gray-800">{fp.type}</p>
-                  <span className="bg-amber-100 text-amber-700 text-sm px-3 py-1 rounded-full font-semibold">{fp.area}</span>
-                </div>
-              </div>
+            {project.floorPlans.map((fp: FloorPlan) => (
+              <FloorPlanCard
+                key={fp.type}
+                type={fp.type}
+                area={fp.area}
+                image={fp.image}
+                image3D={fp.image3D}
+              />
             ))}
           </div>
         </div>
@@ -75,7 +79,7 @@ export default async function UpcomingProjectDetail({ params }: { params: Promis
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Amenities</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {project.amenities.map((a:string) => (
+            {project.amenities.map((a: string) => (
               <div key={a} className="flex items-center gap-2 bg-green-50 rounded-xl px-4 py-3">
                 <CheckCircle size={16} className="text-green-600 shrink-0" />
                 <span className="text-sm text-gray-700">{a}</span>
@@ -88,7 +92,7 @@ export default async function UpcomingProjectDetail({ params }: { params: Promis
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Technologies Used</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {project.technologies.map((t:string) => (
+            {project.technologies.map((t: string) => (
               <div key={t} className="flex items-center gap-2 bg-blue-50 rounded-xl px-4 py-3">
                 <Shield size={16} className="text-blue-600 shrink-0" />
                 <span className="text-sm text-gray-700">{t}</span>
@@ -101,7 +105,7 @@ export default async function UpcomingProjectDetail({ params }: { params: Promis
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Project Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {project.gallery.map((img:string, i:number) => (
+            {project.gallery.map((img: string, i: number) => (
               <img key={i} src={img} alt={`Gallery ${i + 1}`} className="w-full h-40 object-cover rounded-2xl hover:scale-105 transition-transform duration-300" />
             ))}
           </div>

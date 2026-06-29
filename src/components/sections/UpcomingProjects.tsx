@@ -122,7 +122,7 @@ export default function UpcomingProjects() {
                       className="w-full h-56 object-cover opacity-70"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent" />
-                    <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                    <span className={`absolute top-3 left-3 bg-amber-500 text-white text-xs px-3 py-1 rounded-full font-semibold ${p.type === "Residential" ? "bg-green-600" : "bg-blue-600"}`}>
                       {p.type}
                     </span>
                     <div className="absolute bottom-4 left-4">

@@ -2,6 +2,7 @@ export interface FloorPlan {
   type: string;
   image: string;
   area: string;
+  image3D?: string;
 }
 
 export interface BaseProject {
